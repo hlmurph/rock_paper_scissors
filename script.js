@@ -1,4 +1,5 @@
-function getComputerChoice () {
+// Function to choose computer's move
+function getComputerChoice() {
     const num = (Math.floor(Math.random() * 3)) + 1;
     let choice;
     switch(num) {
@@ -15,4 +16,8 @@ function getComputerChoice () {
     return choice;
 }
 
-console.log(getComputerChoice());
+function getHumanChoice() {
+    return prompt("Choose Rock, Paper, or Scissors");
+}
+
+console.log(getHumanChoice());
