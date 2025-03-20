@@ -18,20 +18,19 @@ function playGame() {
 
     }
 
+    //Store final scores in a variable
+    let finalScore = `Human: ${humanScore}\nComputer: ${computerScore}`;
     // Print results of the game
     if (humanScore > computerScore) {
-        console.log("You win!")
+        console.log(`You win!\n${finalScore}`)
     }
     else if (computerScore > humanScore) {
-        console.log("You lose!")
+        console.log(`You lose!\n${finalScore}`)
     }
     else {
-        console.log("Tie!")
+        console.log(`Tie!\n${finalScore}`)
     }
     
-    // Print final scores
-    console.log(`Human: ${humanScore}\nComputer: ${computerScore}`)
-
     //Function to play a round
     function playRound(humanChoice, computerChoice) {
         // Take human input and normalize it so only the first letter is capitalized
