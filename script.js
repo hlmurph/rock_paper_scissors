@@ -3,9 +3,18 @@ playGame();
 function playGame() {
 
     // Declare number of rounds to be played and initialize scores
-    let numberOfRounds = 5;
     let humanScore = 0;
     let computerScore = 0;
+
+    const container = document.querySelector('#container');
+    let buttons = ['Rock', 'Paper', 'Scissors'];
+
+    for (button of buttons) {
+        let newButton = document.createElement('button')
+        container.appendChild(newButton);
+        newButton.setAttribute('id', button);
+        newButton.textContent = button;
+    }
 
     //Store final scores in a variable
     let finalScore = `Human: ${humanScore}\nComputer: ${computerScore}`;
