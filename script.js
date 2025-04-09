@@ -2,11 +2,17 @@ playGame();
 
 function playGame() {
 
-    // Declare number of rounds to be played and initialize scores
+    // Initialize scores
     let humanScore = 0;
     let computerScore = 0;
 
     const container = document.querySelector('#container');
+    const results = document.querySelector('#results');
+    let score = document.createElement('p');
+    let winner = document.createElement('p');
+    score.textContent = `Player: ${humanScore} Computer: ${computerScore}`
+    results.appendChild(score);
+    results.appendChild(winner);
     let buttons = ['Rock', 'Paper', 'Scissors'];
 
     for (button of buttons) {
@@ -76,13 +82,22 @@ function playGame() {
         if (result == "win") {
             console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
             humanScore ++;
+            score.textContent = `Player: ${humanScore} Computer: ${computerScore}`
         }
         else if (result == "lose") {
             console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
             computerScore ++;
+            score.textContent = `Player: ${humanScore} Computer: ${computerScore}`
         }
         else {
             console.log(`Tie! You both chose ${humanChoice}`);
+            score.textContent = `Player: ${humanScore} Computer: ${computerScore}`
+        }
+        // Check for a winner
+        if (humanScore == 5) {
+            winner.textContent = 'You win!'
+        } else if (computerScore == 5) {
+            winner.textContent = 'You lose!'
         }
     }
 }
