@@ -7,17 +7,6 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    // Play a number of rounds equal to the amount declared above
-    for (let x = 0; x < numberOfRounds; x++) {
-
-        // Get both players' choices
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-
-        playRound(humanSelection, computerSelection);
-
-    }
-
     //Store final scores in a variable
     let finalScore = `Human: ${humanScore}\nComputer: ${computerScore}`;
     // Print results of the game
