@@ -14,7 +14,10 @@ function playGame() {
         container.appendChild(newButton);
         newButton.setAttribute('id', button);
         newButton.textContent = button;
-    }
+        newButton.addEventListener('click', () => {
+            playRound(newButton.getAttribute('id'), getComputerChoice());
+        });
+    };
 
     //Store final scores in a variable
     let finalScore = `Human: ${humanScore}\nComputer: ${computerScore}`;
